@@ -3,7 +3,10 @@
   {{ partial "head" . }}
   <body class="sans-serif">
 
-    {{ block "header" . }}{{ partial "nav" . }}{{end}}
+    {{ block "header" . }}
+      {{ partial "header" . }}
+      {{ partial "hero" . }}
+    {{end}}
 
     {{ block "main" . }}{{ end }}
 

@@ -1,50 +1,91 @@
-<footer class="bg-black ph3 pv4 white">
-
-	<div class="mw7 center pt3">
-
-		<div class="measure-narrow center mb4">
-
-			<img src="/img/logo.svg" alt="Kaldi logo" class="db w4 center mb4 br0">
-			<p class="f3 lh-title light-gray b tc mb2">{{ .Site.Data.footer.title }}</p>
-			<p>{{ .Site.Data.footer.blurb }}</p>
-
-			{{ partial "newsletter-form" . }}
-
+<div class="bottom-hero">
+	{% block footer %}
+		<div class="bottom-info row expanded text-center">
+			<div class="columns small-12 medium-4 padding-3">
+				<div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+					<h3>Contact Us</h3>
+					<br />
+					<p class="h5">
+						<strong>Phone:</strong>
+						<a href="tel:{{ info.phone }}">{{ info.phone }}</a>
+					</p>
+					<br />
+					<p class="h5">
+						<strong>Email:</strong>
+						<a href="mailto:{{ info.email }}">{{ info.email }}</a>
+					</p>
+					<br />
+				</div>
+			</div>
+			<div class="columns show-for-medium medium-4 padding-3">
+				<div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+					<h3>Get Quote</h3>
+					<br />
+					<a class="button" href="/contact{{ linkparams }}">Get Estimate</a>
+					<br />
+					<a class="button" href="/services{{ linkparams }}">Our Services</a>
+				</div>
+			</div>
+			<div class="columns small-12 medium-4 padding-3">
+				<div class="overlay padding-1 editable wow animate__fadeInUp" data-wow-duration="1s">
+					<h3>Areas Served</h3>
+					<ul class="no-bullet">
+						<li>Akron, OH</li>
+						<li>Canton, OH</li>
+						<li>Cleveland, OH</li>
+						<li>Massillon, OH</li>
+						<li>North Canton, OH</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+	{% endblock %}
+</div>
 
-		<div class="flex-ns justify-between">
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
-				<ul class="mb3">
-					<li><a href="/" class="link">Home</a></li>
-					<li><a href="/products" class="link">Our products</a></li>
-					<li><a href="/values" class="link">About</a></li>
-					<li><a href="/post" class="link">Blog</a></li>
-					<li><a href="/contact" class="link">Contact</a></li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
-				<ul class="mb3">
-					<li><a href="/post/jamaica-blue/" class="link">Latest offers</a></li>
-					<li><a href="/contact" class="link">Schedule an appointment</a></li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-				<ul class="mhn2">
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook" "alt" "Kaldi on Facebook") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter" "alt" "Kaldi on Twitter") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram" "alt" "Kaldi on Instagram") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-vimeo" "alt" "Kaldi on Vimeo") }}
-				</ul>
-			</div>
-
-		</div>
-	</div>
-
+<footer class="footer">
+    <div class="reviews padding-2">
+        <div class="wow animate__fadeIn" data-wow-duration="2s">
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="elfsight-app-8211aeb1-d7ee-4431-9ffc-d2cefca6a50f" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    
+    <div class="bottom-nav row expanded grid-x align-bottom">
+        <div class="logo column show-for-medium medium-4 large-3 text-center wow animate__fadeInLeft" data-wow-duration="1s">
+            <img src="/assets/images/logos/logo-lawncare.png" alt="{{ .Site.Title }}" />
+        </div>
+        <div class="col small-12 medium-4 large-6 align-self-bottom padding-2 wow animate__fadeIn" data-wow-duration="3s">
+            <ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+				<li><a href="/" class="link">Home</a></li>
+				<li><a href="/products" class="link">Our products</a></li>
+				<li><a href="/values" class="link">About</a></li>
+				<li><a href="/post" class="link">Blog</a></li>
+				<li><a href="/contact" class="link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="col small-12 medium-4 large-3 align-self-bottom padding-2 wow animate__fadeIn" data-wow-duration="1s">
+            <ul class="social menu align-right">
+				{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook" "alt" "Kaldi on Facebook") }}
+				{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter" "alt" "Kaldi on Twitter") }}
+				{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram" "alt" "Kaldi on Instagram") }}
+				{{ partial "social-icon" (dict "link" "#" "svg" "icons-vimeo" "alt" "Kaldi on Vimeo") }}
+            </ul>
+        </div>
+    </div>
+    <div class="bottom row expanded">
+        <div class="legal column small-12 medium-10 wow animate__fadeIn" data-wow-duration="1s">
+            <br />
+            &copy; {{ .Site.Params.copyright }}
+            <span class="show-for-medium">- All Rights Reserved.</span>
+            <br />
+            <a href="/privacy-policy">Privacy Policy</a>
+            | <a href="/terms-of-use">Terms of Use</a>
+        </div>
+        <div class="designed-by column show-for-medium medium-2 wow animate__fadeIn" data-wow-duration="4s">
+            <div>Designed By:</div>
+            <a href="https://webelements.agency">
+                <img src="/assets/images/logos/webelements-horizontal.png" alt="Web Elements" />
+            </a>
+        </div>
+    </div>
 </footer>
-

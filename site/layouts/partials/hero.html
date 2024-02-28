@@ -1,10 +1,10 @@
   <div class="hero">
     <div class="wow animate__fadeInUp" data-wow-duration="1s">
         <div class="editable">
-            <h1>{{.title}}</h1>
-            {{ if .subtitle }}
+            <h1>{{.Site.Title}}</h1>
+            {{ if .Site.Params.subtitle }}
                 <p>
-                {{.subtitle}}
+                {{.Site.Params.subtitle}}
                 </p>
             {{ end }}
         </div>

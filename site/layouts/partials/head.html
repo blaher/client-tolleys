@@ -55,11 +55,17 @@
   <style>
       body {
         background-color: #222822;
-          background-image: url('/images/content/lawncare-bg.gif');
-          background-repeat: no-repeat;
-          background-size: 100%;
-          padding-top: 280px;
+        background-image: url('/images/content/lawncare-bg.gif');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-top: 280px;
       }
+
+      @media screen and (max-width: 39.9375em) {
+        body {
+            padding-top: 180px;
+        }
+    }  
 
       h1, h2, h3, h4, h5 {
           color: #343;
@@ -234,6 +240,24 @@
           box-shadow: 0 0 10px rgba(0, 0, 0, 75%);
           margin: 0.5em 1em;
       }
+
+      @media screen and (max-width: 39.9375em) {
+        .hero {
+          height: 180px;
+        }
+        .hero h1 {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+        .hero {
+          height: 180px;
+        }
+        .hero h1 {
+            font-size: 4em;
+        }
+    }
 
       .content-wrapper, .estimate-wrapper {
           background: linear-gradient(180deg, #eee 0%, #eee 20%, rgb(111, 135, 111) 100%);

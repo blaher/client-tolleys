@@ -2,6 +2,13 @@
 
     {{ partial "hero" . }}
     {{ partial "estimate" . }}
+
+    <div class="content-wrapper">
+        <article class="content row padding-2 wow animate__fadeInUp" data-wow-duration="2s">
+            {{ .Content }}
+        </article>
+    </div>
+
     {{ partial "services" . }}
 
 {{ end }}

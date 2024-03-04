@@ -41,9 +41,9 @@
           $(window).scroll(function() {
               var winTop = $(window).scrollTop();
               if (winTop >= 30) {
-                  $("body").addClass("sticky-shrinknav-wrapper");
+                  //$("body").addClass("sticky-shrinknav-wrapper");
               } else{
-                  $("body").removeClass("sticky-shrinknav-wrapper");
+                  //$("body").removeClass("sticky-shrinknav-wrapper");
               }
           });
           
@@ -166,8 +166,9 @@
       }
 
       body.sticky-shrinknav-wrapper .sticky-shrinknav-header img {
-          height: 150px;
+          height: 180px;
           margin-left: 2em;
+          margin-top: -20px;
       }
 
       .top-bar-title {
@@ -242,7 +243,7 @@
 
       .estimate-wrapper {
           background: #eee;
-          margin-bottom: -180px;
+          margin-bottom: -280px;
       }
 
       .content, .estimate {
@@ -284,7 +285,7 @@
       .estimate-img {
           bottom: -40px;
           position: relative;
-          left: -50px;
+          left: -40px;
       }
 
       .services {
